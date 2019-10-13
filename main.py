@@ -20,5 +20,10 @@ mainWindow.setWindowTitle("MyBrowser")
 mainWindow.setStyleSheet("background-color:rgb(0,0,0);")
 mainWindow.setWindowIcon(QIcon("browser.png"))
 
+web = QWebEngineView(mainWindow)
+web.setGeometry(0,30,1015,768)
+web.setStyleSheet("background-color:rgb(255,255,255);")
+web.load(QUrl(home_url))
+
 mainWindow.show()
 application.exec_()
