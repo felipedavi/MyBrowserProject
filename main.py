@@ -8,6 +8,36 @@ from PyQt5.QtWebEngineWidgets import QWebEngineView
 from PyQt5.QtCore import QUrl, QSize
 from PyQt5.QtGui import QIcon, QPixmap
 
+home_url     = "https://www.google.com"
+facebook_url = "https://www.facebook.com"
+twitter_url  = "https://www.twitter.com"
+youtube_url  = "https://www.youtube.com"
+
+def home(mainWindow):
+	web.load(QUrl(home_url))
+def reload(mainWindow):
+	web.reload()
+def back(mainWindow):
+	web.back()
+def forward(mainWindow):
+	web.forward()
+def go(mainWindow):
+	go_url = go_line.text()
+	web.load(QUrl(go_url))
+def facebook(mainWindow):
+	web.load(QUrl(facebook_url))
+def twitter(mainWindow):
+	web.load(QUrl(twitter_url))
+def youtube(mainWindow):
+	web.load(QUrl(youtube_url))
+def download(item):
+	item.accept()
+	msg = QMessageBox()
+	msg.setWindowTitle("DOWNLOAD")
+	msg.setText("O SEU DOWNLOAD FOI INICIALIZADO")
+	msg.setIcon(QMessageBox.Warning)
+	msg.exec_()
+
 application = QApplication([])
 
 mainWindow= QMainWindow()
